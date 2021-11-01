@@ -7,43 +7,25 @@
     android:gravity="center_horizontal"
     android:background="#bde0fe"
     android:orientation="vertical"
-    tools:context=".EditTransaction">
+    tools:context="com.example.numismatics.EditTransaction">
 
-    <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/toggleButtonGroup"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/edit_my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <ToggleButton
+        android:id="@+id/edit_toggle"
+        android:layout_marginTop="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:singleSelection="true"
-        android:layout_margin="30dp"
-        >
-
-        <Button
-            android:id="@+id/expense"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Expense "
-            android:textSize="23sp"
-            android:textAllCaps="false"
-            app:shapeAppearance="@style/Rounded"
-            app:strokeColor="#03045e"
-            app:strokeWidth="1dp"
-            />
-
-        <Button
-            android:id="@+id/earning"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Earning "
-            android:textSize="23sp"
-            android:textAllCaps="false"
-            app:shapeAppearance="@style/Rounded"
-            app:strokeColor="@android:color/black"
-            app:strokeWidth="1dp"
-            />
-
-    </com.google.android.material.button.MaterialButtonToggleGroup>
+        android:background="@color/accent"
+        android:textOn="Earning"
+        android:textOff="Expense"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -135,6 +117,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
+                        android:inputType="date"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
                         android:drawableEnd="@drawable/ic_baseline_calendar_today_24"
                         />
 

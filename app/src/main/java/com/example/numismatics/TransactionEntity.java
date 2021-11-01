@@ -19,27 +19,27 @@ public class TransactionEntity {
 
     @NonNull
     @PrimaryKey(autoGenerate = true)
-    private Integer transactionID;
+    protected Integer transactionID=0;
 
     @ColumnInfo(name = "cost")
-    private Double cost;
+    protected Double cost;
 
     @ColumnInfo(name = "date")
-    private String date;
+    protected String date;
 
     @ColumnInfo(name = "remark")
-    private String remark;
+    protected String remark;
 
     public TransactionEntity() {
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public TransactionEntity(@NonNull Integer transactionID, Double cost, String date, String remark) {
-        this.transactionID = transactionID;
-        this.cost = cost;
-        this.date = date;
-        this.remark = remark;
-    }
+//    @RequiresApi(api = Build.VERSION_CODES.O)
+//    public TransactionEntity(@NonNull Integer transactionID, Double cost, String date, String remark) {
+//        this.transactionID = transactionID;
+//        this.cost = cost;
+//        this.date = date;
+//        this.remark = remark;
+//    }
 
     public TransactionEntity(Double cost, String date, String remark) {
         this.cost = cost;

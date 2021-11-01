@@ -7,43 +7,33 @@
     android:gravity="center_horizontal"
     android:background="#bde0fe"
     android:orientation="vertical"
-    tools:context=".AddTransaction">
+    tools:context="com.example.numismatics.AddTransaction">
 
-    <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/toggleButtonGroup"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/add_my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+    <ToggleButton
+        android:id="@+id/add_toggle"
+        android:layout_marginTop="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:singleSelection="true"
-        android:layout_margin="30dp"
-        >
-
-        <Button
-            android:id="@+id/expense"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Expense "
-            android:textSize="23sp"
-            android:textAllCaps="false"
-            app:shapeAppearance="@style/Rounded"
-            app:strokeColor="#03045e"
-            app:strokeWidth="1dp"
-            />
-
-        <Button
-            android:id="@+id/earning"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Earning "
-            android:textSize="23sp"
-            android:textAllCaps="false"
-            app:shapeAppearance="@style/Rounded"
-            app:strokeColor="@android:color/black"
-            app:strokeWidth="1dp"
-            />
-
-    </com.google.android.material.button.MaterialButtonToggleGroup>
+        android:background="@color/accent"
+        android:textOn="Earning"
+        android:textOff="Expense"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        android:textColor="@color/secondary_text"
+        android:text="Click to switch"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -73,7 +63,8 @@
 
                 >
                 <com.google.android.material.textfield.TextInputEditText
-
+                    android:id="@+id/add_amount"
+                    android:inputType="numberDecimal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
@@ -90,7 +81,7 @@
 
                 >
                 <com.google.android.material.textfield.TextInputEditText
-
+                    android:id="@+id/add_remark"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
@@ -107,28 +98,38 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Date"
+                    android:hint="@string/date"
                     android:layout_margin="5dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     >
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/date"
+                        android:id="@+id/add_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
+                        android:inputType="date"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
                         android:drawableEnd="@drawable/ic_baseline_calendar_today_24"
                         />
+
 
                 </com.google.android.material.textfield.TextInputLayout>
 
 
+
             </LinearLayout>
+
+
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
     <Button
+        android:id="@+id/add_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
